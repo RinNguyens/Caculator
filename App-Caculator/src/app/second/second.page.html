@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">second</ion-title>
+    <ion-button (click)="goBack()" class="right">
+        Back
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding margin>
+  <div class="bill">
+      <ion-item>
+        <ion-label>Bill Amount : </ion-label>
+        <ion-input class="input-rin" type="number" placeholder="Amount" [(ngModel)]="numbers" required></ion-input>
+      </ion-item>
+      <ion-item class="tip">
+          <ion-label>Tip Amount</ion-label>
+          <ion-label>{{tipNumber}}</ion-label> <br/>
+      </ion-item>
+      <ion-item>
+        <div class="sema">
+          <ion-button class="sema-bt" *ngFor="let num of groupNumber" (click)="onButtonHandle(num)">{{num}}%</ion-button>
+        </div>
+      </ion-item>
+  </div>
+  <ion-item class="tip"> 
+    <ion-text>
+      <p>Bill Amount : {{numbers}}</p>
+      <p>Tip Amount : {{tipNumber}}</p>
+      <p>Percent : {{percent}}</p>
+      <br/>
+      <h1><strong>Result  {{result}}</strong></h1>
+    </ion-text>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>RinChan-Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
